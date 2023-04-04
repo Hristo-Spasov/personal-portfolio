@@ -49,7 +49,7 @@ const Projects = () => {
           >
             <img
               className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg cursor-pointer"
-              src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
+              src={project.project_image}
               alt=""
               onClick={() => window.open(project.live, "_blank")}
             />

@@ -22,16 +22,16 @@ const navLinks = [
 
 const projects = [
   {
-    name: "Is it Wet",
+    name: "SkyCast",
     description:
-      "Web application to check the current weather,24 hour forecast and 3 days future forecast.",
+      "Web application to check the current weather and a 24 hour forecast.The weather data is fetched through two different APIs and also using a geolocation API to display the weather at your current location.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "rest api",
         color: "green-text-gradient",
       },
       {
@@ -40,82 +40,42 @@ const projects = [
       },
     ],
     image_source: ImGithub,
-    source_code: "https://github.com/",
+    source_code: "https://github.com/Trickkyyy/weather-app-react",
     image_live: BsLink45Deg,
     live: "https://github.com/",
-    project_image: "image"
+    project_image: "/src/assets/skycast.jpg"
   },
   {
-    name: "Is it Wet2",
+    name: "Face Recognition",
     description:
-      "Web application to check the current weather,24 hour forecast and 3 days future forecast.",
+      `Face Recognition App which detects human face on a .jpg URLs using the Clarifay API.
+      Demo credentials without Registering:
+      account:test@test.com | password: test 
+      *IMPORTANT* 
+      Currently the app is hosted on render.com and the request are very slow!`,
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "postgresql",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "expressjs",
         color: "pink-text-gradient",
+      },
+      {
+        name: "tachyons",
+        color: "orange-text-gradient",
       },
     ],
     image_source: ImGithub,
-    source_code: "https://github.com/",
+    source_code: "https://github.com/Trickkyyy/face-recognition",
     image_live: BsLink45Deg,
-    live: "https://github.com/",
-    project_image: "image"
-  },
-  {
-    name: "Is it Wet3",
-    description:
-      "Web application to check the current weather,24 hour forecast and 3 days future forecast.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image_source: ImGithub,
-    source_code: "https://github.com/",
-    image_live: BsLink45Deg,
-    live: "https://github.com/",
-    project_image: "image"
-  },
-  {
-    name: "Is it Wet4",
-    description:
-      "Web application to check the current weather,24 hour forecast and 3 days future forecast.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image_source: ImGithub,
-    source_code: "https://github.com/",
-    image_live: BsLink45Deg,
-    live: "https://github.com/",
-    project_image: "image"
+    live: "https://face-recognition-7rvj.onrender.com",
+    project_image: "/src/assets/facerecognition.jpg"
   },
 ]
 
