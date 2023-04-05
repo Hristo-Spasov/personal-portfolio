@@ -96,7 +96,7 @@ function Contact() {
             {/* ReCAPTCHA */}
             <ReCAPTCHA
               className="flex justify-center items-center"
-              sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
+              sitekey="6LfcxlUlAAAAAKqCe3Ze0YbnyoHTGlLQXvdVKIUa"
               onChange={onChange}
             />
             {/* BUTTON */}
