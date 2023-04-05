@@ -1,5 +1,7 @@
 import {ImGithub} from 'react-icons/im'
 import {BsLink45Deg} from 'react-icons/bs'
+import facerecogniton from '/src/assets/facerecognition.jpg'
+import skycast from '/src/assets/skycast.jpg'
 
 
 
@@ -43,7 +45,7 @@ const projects = [
     source_code: "https://github.com/Trickkyyy/weather-app-react",
     image_live: BsLink45Deg,
     live: "https://github.com/",
-    project_image: "/src/assets/skycast.jpg"
+    project_image: skycast
   },
   {
     name: "Face Recognition",
@@ -75,7 +77,7 @@ const projects = [
     source_code: "https://github.com/Trickkyyy/face-recognition",
     image_live: BsLink45Deg,
     live: "https://face-recognition-7rvj.onrender.com",
-    project_image: "/src/assets/facerecognition.jpg"
+    project_image: facerecogniton
   },
 ]
 
