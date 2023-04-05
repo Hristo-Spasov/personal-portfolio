@@ -120,17 +120,17 @@ function Contact() {
         <AnimatePresence>
           {isSubmitted && (
             <motion.div
-              class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md"
+              className="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md"
               role="alert"
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -10, opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div class="flex">
-                <div class="py-1">
+              <div clasName="flex">
+                <div className="py-1">
                   <svg
-                    class="fill-current h-6 w-6 text-teal-500 mr-4"
+                    className="fill-current h-6 w-6 text-teal-500 mr-4"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                   >
@@ -138,8 +138,8 @@ function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p class="font-bold">Form submitted successfully</p>
-                  <p class="text-sm">Thank you reaching out!</p>
+                  <p className="font-bold">Form submitted successfully</p>
+                  <p className="text-sm">Thank you reaching out!</p>
                 </div>
               </div>
             </motion.div>
