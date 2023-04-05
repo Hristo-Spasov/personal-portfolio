@@ -44,7 +44,7 @@ const projects = [
     image_source: ImGithub,
     source_code: "https://github.com/Trickkyyy/weather-app-react",
     image_live: BsLink45Deg,
-    live: "https://github.com/",
+    live: "https://skycast-v1g9.onrender.com",
     project_image: skycast
   },
   {
