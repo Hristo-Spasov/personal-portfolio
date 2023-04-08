@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <>
+    <div>
       {/* header */}
       <motion.div
         initial="hidden"
@@ -18,7 +18,7 @@ const Projects = () => {
           hidden: { opacity: 0, x: -100 },
         }}
         id="projects"
-        className="flex flex-col justify-center items-center "
+        className="flex flex-col justify-center items-center mt-[100px] sm:mt-0 "
       >
         <p className="text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] px-20 py-6 mt-10">
           My recent work.
@@ -57,7 +57,7 @@ const Projects = () => {
               <h5 className="mb-2 text-xl font-medium text-white">
                 {project.name}
               </h5>
-              <p className="mb-4 text-base text-accent ">
+              <p className="mb-4 text-base text-slate-300 ">
                 {project.description}
               </p>
               {/* buttons */}
@@ -80,7 +80,7 @@ const Projects = () => {
                 </a>
               </div>
               {/* Project technologies */}
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-4 flex flex-wrap gap-2 justify-center items-center">
                 {project.tags.map((tag) => (
                   <p key={tag.name} className={`text-[14px] ${tag.color}`}>
                     #{tag.name}
@@ -91,7 +91,7 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -53,24 +53,24 @@ function Contact() {
   return (
     <motion.div
       id="contact"
-      className=" flex flex-col justify-center  w-full h-screen mt-[200px]"
-      initial={{ opacity: 0, y: 80 }}
+      className=" flex flex-col justify-center w-full h-screen sm:py-0 sm:px-[30px] md:py-0 md:px-[30px] text-xl sm:text-base md:mt-60 "
+      initial={{ opacity: 0, y: 100 }}
       viewport={{ once: true }}
-      whileInView={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 55 }}
       transition={{ duration: 1.5, ease: "easeOut" }}
     >
-      <div className="flex flex-col justify-center items-center mt-4 w-full h-full ">
-        <div className="flex flex-col bg-primery p-5 rounded  gap-4 shadow-lg shadow-action max-w-xl sm:px-20 mb-16">
-          <h2 className="flex items-center justify-center my-2 sm:text-[30px] text-accent">
+      <div className="flex flex-col justify-center items-center  w-full h-full ">
+        <div className="flex flex-col bg-transperant p-5 rounded  md:gap-4 hover:shadow-md hover:shadow-action max-w-3xl sm:px-20 mb-16 sm:w-[48rem]">
+          <h2 className="flex items-center justify-center my-2 sm:text-[30px] text-white">
             Contact Me.
           </h2>
           {/* FORM */}
-          <form id="myForm" ref={form} onSubmit={sendEmail} className="mt-5">
+          <form id="myForm" ref={form} onSubmit={sendEmail} className=" mt-5">
             <div className="mb-6">
               <input
                 type="text"
                 name="from_name"
-                className="w-full font-normal px-3 py-2 rounded border-none outline-none"
+                className="w-full font-normal p-1 sm:px-3 sm:py-2 border-b-2 bg-transparent outline-none focus:border-accent text-white"
                 placeholder="Name"
                 required
               />
@@ -79,7 +79,7 @@ function Contact() {
               <input
                 type="email"
                 name="from_email"
-                className="w-full font-normal px-3 py-2 rounded border-none outline-none"
+                className="w-full font-normal  p-1 sm:px-3 sm:py-2 border-b-2 bg-transparent outline-none focus:border-accent text-white"
                 placeholder="Email"
                 required
               />
@@ -87,9 +87,9 @@ function Contact() {
             <div className="mb-6">
               <textarea
                 name="message"
-                className="block  w-full font-normal px-3  rounded border-none outline-none resize-none"
+                className="block  w-full font-normal px-3  border-b-2 outline-none resize-none bg-transparent focus:border-accent text-white"
                 placeholder="Message"
-                rows={7}
+                rows={6}
                 required
               ></textarea>
             </div>

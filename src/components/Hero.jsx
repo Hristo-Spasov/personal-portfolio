@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <section id="hero" className={`relative w-full h-screen mx-auto mb-1`}>
-      <div className="absolute inset-0  max-w-7xl mx-auto flex flex-row items-center gap-5">
+      <div className="absolute inset-0  max-w-7xl mx-auto flex flex-row items-center gap-5 ml-5 2xl:ml-[300px] ">
         <div>
           <motion.h3
             className="font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2"
