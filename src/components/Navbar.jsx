@@ -28,11 +28,11 @@ const Navbar = () => {
         >
           <img
             src={logo}
-            className="h-[80px] w-[80px] object-contain cursor-pointer"
+            className="h-[80px] w-[80px] object-contain cursor-pointer mt-2 ml-2 mb-2 py-[5px]"
           />
         </Link>
         {/* Desktop nav */}
-        <ul className="list-none hidden sm:flex justify-center gap-10">
+        <ul className="list-none hidden sm:flex justify-center gap-10 ">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -75,7 +75,7 @@ const Navbar = () => {
                     to={nav.id}
                     smooth={true}
                     duration={500}
-                    offset={-80}
+                    offset={-100}
                     onClick={() => {
                       setActive(nav.title);
                       setToggle(!toggle);
