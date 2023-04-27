@@ -28,11 +28,10 @@ const Projects = () => {
         </h2>
       </motion.div>
       {/* Cards */}
-      <div className="flex flex-wrap justify-center gap-6 lg:gap-14 lg:grid-cols-2 m-10">
+      <div className="flex flex-wrap justify-center gap-6 lg:gap-14 lg:grid-cols-2 m-10 ">
         {projects.map((project, index) => (
           <motion.div
             key={project.name}
-            className="flex flex-col rounded-lg bg-primery shadow-lg shadow-action md:max-w-xl md:flex-row"
             initial="hidden"
             viewport={{ once: true }}
             whileInView="visible"
@@ -47,47 +46,56 @@ const Projects = () => {
               hidden: { opacity: 0, y: -100 },
             }}
           >
-            <img
-              className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg cursor-pointer"
-              src={project.project_image}
-              alt=""
-              onClick={() => window.open(project.live, "_blank")}
-            />
-            <div className="flex flex-col justify-start p-6">
-              <h5 className="mb-2 text-xl font-medium text-white">
-                {project.name}
-              </h5>
-              <p className="mb-4 text-base text-slate-300 ">
-                {project.description}
-              </p>
-              {/* buttons */}
-              <div className="w-full flex justify-evenly items-center p-1">
-                <a
-                  href={project.source_code}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className=" cursor-pointer text-accent hover:text-action hover:scale-110 duration-150"
-                >
-                  <ImGithub size={25} />
-                </a>
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cursor-pointer text-accent hover:text-action hover:scale-110 duration-150"
-                >
-                  <BsLink45Deg size={25} />
-                </a>
+            <motion.div
+              className="flex flex-col rounded-lg bg-primery shadow-lg shadow-action md:max-w-xl md:flex-row min-h-[338px]"
+              whileHover={{ scale: 1.05 }}
+              transition={{
+                type: "spring",
+                ease: "easeOut",
+              }}
+            >
+              <img
+                className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg cursor-pointer  "
+                src={project.project_image}
+                alt=""
+                onClick={() => window.open(project.live, "_blank")}
+              />
+              <div className="flex flex-col justify-start p-6">
+                <h5 className="mb-2 text-xl font-medium text-white">
+                  {project.name}
+                </h5>
+                <p className="mb-4 text-base text-slate-300 ">
+                  {project.description}
+                </p>
+                {/* buttons */}
+                <div className="w-full flex justify-evenly items-center p-1">
+                  <a
+                    href={project.source_code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=" cursor-pointer text-accent hover:text-action hover:scale-110 duration-150"
+                  >
+                    <ImGithub size={25} />
+                  </a>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer text-accent hover:text-action hover:scale-110 duration-150"
+                  >
+                    <BsLink45Deg size={25} />
+                  </a>
+                </div>
+                {/* Project technologies */}
+                <div className="mt-4 flex flex-wrap gap-2 justify-center items-center">
+                  {project.tags.map((tag) => (
+                    <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+                      #{tag.name}
+                    </p>
+                  ))}
+                </div>
               </div>
-              {/* Project technologies */}
-              <div className="mt-4 flex flex-wrap gap-2 justify-center items-center">
-                {project.tags.map((tag) => (
-                  <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-                    #{tag.name}
-                  </p>
-                ))}
-              </div>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>

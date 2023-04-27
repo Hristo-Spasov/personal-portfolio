@@ -2,6 +2,7 @@ import {ImGithub} from 'react-icons/im'
 import {BsLink45Deg} from 'react-icons/bs'
 import facerecogniton from '/src/assets/facerecognition.jpg'
 import skycast from '/src/assets/skycast.jpg'
+import crownshop from '/src/assets/crwnshop.jpg'
 
 
 
@@ -78,6 +79,30 @@ const projects = [
     image_live: BsLink45Deg,
     live: "https://face-recognition-7rvj.onrender.com",
     project_image: facerecogniton
+  },
+  {
+    name: "Crown Shop",
+    description:
+      `E-commerce website with authentication and routing.Utilizing React-router and Context API.Authentication though email and password and Google 0Auth.Firestore is used for storing user and products data.`,
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "firestore",
+        color: "green-text-gradient",
+      },
+      {
+        name: "styled components",
+        color: "orange-text-gradient",
+      },
+    ],
+    image_source: ImGithub,
+    source_code: "https://github.com/Trickkyyy/crwn-ecommerce",
+    image_live: BsLink45Deg,
+    live: "https://crown-shop.onrender.com/",
+    project_image: crownshop
   },
 ]
 
