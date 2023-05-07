@@ -101,7 +101,7 @@ const projects = [
     image_source: ImGithub,
     source_code: "https://github.com/Trickkyyy/crwn-ecommerce",
     image_live: BsLink45Deg,
-    live: "https://crown-shop.onrender.com/",
+    live: "https://ecommece-crown-shop.netlify.app/",
     project_image: crownshop
   },
 ]
