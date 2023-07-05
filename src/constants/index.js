@@ -1,11 +1,15 @@
-import {ImGithub} from 'react-icons/im'
-import {BsLink45Deg} from 'react-icons/bs'
-import facerecogniton from '/src/assets/facerecognition.jpg'
-import skycast from '/src/assets/skycast.jpg'
-import crownshop from '/src/assets/crwnshop.jpg'
+import { ImGithub } from "react-icons/im";
+import { BsLink45Deg } from "react-icons/bs";
 
+// URLs of the project images delivered through Cloudinary
+const facerecognition =
+  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1688557607/facerecognition_wz7uc0.jpg";
 
+const skycast =
+  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1688557607/skycast_z34m5t.jpg";
 
+const crownshop =
+  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1688557607/crwnshop_oorddl.jpg";
 
 const navLinks = [
   {
@@ -20,8 +24,7 @@ const navLinks = [
     id: "contact",
     title: "Contact",
   },
-]
-
+];
 
 const projects = [
   {
@@ -46,12 +49,11 @@ const projects = [
     source_code: "https://github.com/Trickkyyy/weather-app-react",
     image_live: BsLink45Deg,
     live: "https://skycast-v1g9.onrender.com",
-    project_image: skycast
+    project_image: skycast,
   },
   {
     name: "Face Recognition",
-    description:
-      `Face Recognition App which detects human face on a .jpg URLs using the Clarifay API.
+    description: `Face Recognition App which detects human face on a .jpg URLs using the Clarifay API.
       Demo credentials without Registering:
       account:test@test.com | password: test 
       *IMPORTANT* 
@@ -78,12 +80,11 @@ const projects = [
     source_code: "https://github.com/Trickkyyy/face-recognition",
     image_live: BsLink45Deg,
     live: "https://face-recognition-7rvj.onrender.com",
-    project_image: facerecogniton
+    project_image: facerecognition,
   },
   {
     name: "Crown Shop",
-    description:
-      `E-commerce website with authentication and routing.Utilizing React-router and Context API.Authentication though email and password and Google 0Auth.Firestore is used for storing user and products data.`,
+    description: `E-commerce website with authentication and routing.Utilizing React-router and Context API.Authentication though email and password and Google 0Auth.Firestore is used for storing user and products data.`,
     tags: [
       {
         name: "react",
@@ -102,9 +103,8 @@ const projects = [
     source_code: "https://github.com/Trickkyyy/crwn-ecommerce",
     image_live: BsLink45Deg,
     live: "https://ecommece-crown-shop.netlify.app/",
-    project_image: crownshop
+    project_image: crownshop,
   },
-]
+];
 
-export {navLinks,projects}
-
+export { navLinks, projects };

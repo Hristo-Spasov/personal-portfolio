@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         {/* Back to top */}
         <Link
-          to=""
+          to="/"
           smooth={true}
           duration={300}
           onClick={() => {
