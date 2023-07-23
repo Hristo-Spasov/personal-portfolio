@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Suspense } from "react";
 import emailjs from "@emailjs/browser";
-import ReCAPTCHA from "react-google-recaptcha";
+const ReCAPTCHA = React.lazy(() => import("react-google-recaptcha"));
 import { motion, AnimatePresence } from "framer-motion";
 
 function Contact() {
@@ -93,12 +93,16 @@ function Contact() {
                 required
               ></textarea>
             </div>
+
             {/* ReCAPTCHA */}
-            <ReCAPTCHA
-              className="flex justify-center items-center"
-              sitekey="6LfcxlUlAAAAAKqCe3Ze0YbnyoHTGlLQXvdVKIUa"
-              onChange={onChange}
-            />
+            <Suspense fallback={<div>Loading reCAPTCHA...</div>}>
+              <ReCAPTCHA
+                className="flex justify-center items-center"
+                sitekey="6LfcxlUlAAAAAKqCe3Ze0YbnyoHTGlLQXvdVKIUa"
+                onChange={onChange}
+              />
+            </Suspense>
+
             {/* BUTTON */}
             <div className="flex justify-center items-center pt-3">
               <button
@@ -116,6 +120,7 @@ function Contact() {
             </div>
           </form>
         </div>
+
         {/* ALERT */}
         <AnimatePresence>
           {isSubmitted && (
