@@ -11,7 +11,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern":
-          "url('https://res.cloudinary.com/dh3yknk5o/image/upload/v1688557607/herobg_yt2trh.jpg')",
+          "url('https://res.cloudinary.com/dh3yknk5o/image/upload/v1691589543/Hristo%20site/herobg_n23uxh.jpg')",
       },
     },
   },

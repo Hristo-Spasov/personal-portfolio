@@ -55,7 +55,7 @@ const Projects = () => {
               }}
             >
               <img
-                className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-l-lg cursor-pointer  "
+                className="h-96 w-full rounded-t-lg object-cover md:w-48 md:rounded-none md:rounded-l-lg cursor-pointer  "
                 src={project.project_image}
                 alt="project_image"
                 onClick={() => window.open(project.live, "_blank")}

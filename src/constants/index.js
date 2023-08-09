@@ -2,14 +2,14 @@ import { ImGithub } from "react-icons/im";
 import { BsLink45Deg } from "react-icons/bs";
 
 // URLs of the project images delivered through Cloudinary
-const facerecognition =
-  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1688557607/facerecognition_wz7uc0.jpg";
+const ellenaArtGallery =
+  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1691587633/Hristo%20site/ellena_bif8es.webp";
 
 const skycast =
-  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1688557607/skycast_z34m5t.jpg";
+  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1691588093/Hristo%20site/skycast_eqyb05.webp";
 
 const crownshop =
-  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1688557607/crwnshop_oorddl.jpg";
+  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1691588093/Hristo%20site/crwn-shop_fdczrw.webp";
 
 const navLinks = [
   {
@@ -28,59 +28,31 @@ const navLinks = [
 
 const projects = [
   {
-    name: "SkyCast",
-    description:
-      "Web application to check the current weather and a 24 hour forecast.The weather data is fetched through two different APIs and also using a geolocation API to display the weather at your current location.",
+    name: "Ellena Art Gallery",
+    description: `Designed by Ellena and developed by me.'Ellena Art Gallery' is captivating website showcasing  Ellena artistic journey. Built using React and TypeScript, the platform elegantly captures her creative expressions while providing an immersive digital art experience.`,
     tags: [
       {
-        name: "react",
+        name: "typescript",
         color: "blue-text-gradient",
       },
       {
-        name: "rest api",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image_source: ImGithub,
-    source_code: "https://github.com/Trickkyyy/weather-app-react",
-    image_live: BsLink45Deg,
-    live: "https://skycast-v1g9.onrender.com",
-    project_image: skycast,
-  },
-  {
-    name: "Face Recognition",
-    description: `Face Recognition App which detects human face on a .jpg URLs using the Clarifay API.
-      Demo credentials without Registering:
-      account:test@test.com | password: test 
-      *IMPORTANT* 
-      Currently the app is hosted on render.com and the request are very slow!`,
-    tags: [
-      {
         name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "postgresql",
         color: "green-text-gradient",
       },
       {
-        name: "expressjs",
+        name: "react router",
         color: "pink-text-gradient",
       },
       {
-        name: "tachyons",
+        name: "CSS Modules",
         color: "orange-text-gradient",
       },
     ],
     image_source: ImGithub,
-    source_code: "https://github.com/Trickkyyy/face-recognition",
+    source_code: "https://github.com/Trickkyyy/elena-portfolio",
     image_live: BsLink45Deg,
-    live: "https://face-recognition-7rvj.onrender.com",
-    project_image: facerecognition,
+    live: "https://ellena-art.gallery",
+    project_image: ellenaArtGallery,
   },
   {
     name: "Crown Shop",
@@ -104,6 +76,30 @@ const projects = [
     image_live: BsLink45Deg,
     live: "https://ecommece-crown-shop.netlify.app/",
     project_image: crownshop,
+  },
+  {
+    name: "SkyCast",
+    description:
+      "Web application to check the current weather and a 24 hour forecast.The weather data is fetched through two different APIs and also using a geolocation API to display the weather at your current location.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "rest api",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image_source: ImGithub,
+    source_code: "https://github.com/Trickkyyy/weather-app-react",
+    image_live: BsLink45Deg,
+    live: "https://skycast-v1g9.onrender.com",
+    project_image: skycast,
   },
 ];
 
