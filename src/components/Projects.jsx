@@ -61,9 +61,9 @@ const Projects = () => {
                 onClick={() => window.open(project.live, "_blank")}
               />
               <div className="flex flex-col justify-start p-6">
-                <h5 className="mb-2 text-xl font-medium text-white">
+                <h3 className="mb-2 text-xl font-medium text-white">
                   {project.name}
-                </h5>
+                </h3>
                 <p className="mb-4 text-base text-slate-300 ">
                   {project.description}
                 </p>
@@ -73,6 +73,7 @@ const Projects = () => {
                     href={project.source_code}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Github"
                     className=" cursor-pointer text-accent hover:text-action hover:scale-110 duration-150"
                   >
                     <ImGithub size={25} />
@@ -82,6 +83,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cursor-pointer text-accent hover:text-action hover:scale-110 duration-150"
+                    aria-label="Project"
                   >
                     <BsLink45Deg size={25} />
                   </a>

@@ -29,6 +29,7 @@ const Navbar = () => {
           <img
             src={logo}
             className="h-[80px] w-[80px] object-contain cursor-pointer mt-2 ml-2 mb-2 py-[5px]"
+            alt="logo"
           />
         </Link>
         {/* Desktop nav */}
