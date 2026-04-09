@@ -1,100 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   html {
-    font-family: 'Poppins', sans-serif;
-    user-select: none;
-    }
-        .black-gradient {
-          background: #000000;
-          /* fallback for old browsers */
-          background: -webkit-linear-gradient(to right,
-              #434343,
-              #000000);
-          /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to right,
-              #434343,
-              #000000);
-          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        }
-    
-        .violet-gradient {
-          background: #804dee;
-          background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-          background: -webkit-linear-gradient(-90deg,
-              #804dee 0%,
-              rgba(60, 51, 80, 0) 100%);
-        }
-    
-        .green-pink-gradient {
-          background: "#00cea8";
-          background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-          background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-        }
-    
-        .orange-text-gradient {
-          background: #f12711;
-          /* fallback for old browsers */
-          background: -webkit-linear-gradient(to top,
-              #f12711,
-              #f5af19);
-          /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to top,
-              #f12711,
-              #f5af19);
-          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-    
-        .green-text-gradient {
-          background: #11998e;
-          /* fallback for old browsers */
-          background: -webkit-linear-gradient(to top,
-              #11998e,
-              #38ef7d);
-          /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to top,
-              #11998e,
-              #38ef7d);
-          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-    
-        .blue-text-gradient {
-          /* background: -webkit-linear-gradient(#eee, #333); */
-          background: #56ccf2;
-          /* fallback for old browsers */
-          background: -webkit-linear-gradient(to top,
-              #2f80ed,
-              #56ccf2);
-          /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to top,
-              #2f80ed,
-              #56ccf2);
-          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-    
-        .pink-text-gradient {
-          background: #ec008c;
-          /* fallback for old browsers */
-          background: -webkit-linear-gradient(to top,
-              #ec008c,
-              #fc6767);
-          /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to top,
-              #ec008c,
-              #fc6767);
-          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-primary text-text;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accentLight;
+  }
+
+  /* Glassmorphism utility */
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-surface/80 backdrop-blur-xl border border-white/5 shadow-glass;
+  }
+
+  /* Gradient text utilities */
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent via-accentLight to-teal bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold via-yellow-400 to-amber-300 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-teal {
+    @apply bg-gradient-to-r from-teal via-tealLight to-accent bg-clip-text text-transparent;
+  }
+
+  /* Glow effects */
+  .glow-accent {
+    @apply shadow-glow;
+  }
+
+  .glow-teal {
+    @apply shadow-glow-teal;
+  }
+
+  /* Button gradients */
+  .btn-gradient {
+    @apply bg-gradient-to-r from-accent to-teal hover:from-accentLight hover:to-tealLight;
+  }
+
+  /* Grid background effect */
+  .grid-bg {
+    background-size: 50px 50px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-medium 
+           bg-gradient-to-r from-accent to-teal 
+           hover:from-accentLight hover:to-tealLight
+           text-white shadow-glow 
+           transform hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-medium 
+           bg-white/5 border border-white/10 
+           hover:bg-white/10 hover:border-accent/50
+           text-white transform hover:scale-105 transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-6xl lg:text-7xl font-black 
+           bg-gradient-to-r from-white via-textMuted to-textMuted 
+           bg-clip-text text-transparent;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl font-medium 
+           text-accent uppercase tracking-widest;
+  }
+
+  .blue-text-gradient {
+    background: linear-gradient(to top, #2f80ed, #56ccf2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .green-text-gradient {
+    background: linear-gradient(to top, #11998e, #38ef7d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .pink-text-gradient {
+    background: linear-gradient(to top, #ec008c, #fc6767);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .orange-text-gradient {
+    background: linear-gradient(to top, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

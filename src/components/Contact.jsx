@@ -1,157 +1,237 @@
-import React, { useState, useRef, useEffect, Suspense } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-const ReCAPTCHA = React.lazy(() => import("react-google-recaptcha"));
 import { motion, AnimatePresence } from "framer-motion";
+import { HiMail, HiUser, HiChatAlt2, HiArrowRight } from "react-icons/hi";
+import { SiGithub, SiTwitter } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 
 function Contact() {
   const form = useRef();
   const [loading, setLoading] = useState(false);
-  const [captcha, setCaptcha] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  //! reCAPTCHA
-  const onChange = (value) => {
-    console.log("Captcha value:", value);
-    setCaptcha(true);
-  };
-
-  //! EmailJS API
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
 
     emailjs
-      .sendForm(
-        "service_geuiz36",
-        "template_n65r8lp",
-        form.current,
-        "RfUT5KaBjJiJ-rbVO"
-      )
+      .sendForm("service_geuiz36", "template_n65r8lp", form.current,"RfUT5KaBjJiJ-rbVO")
       .then(
         (result) => {
-          console.log(result.text);
           setLoading(false);
-          document.getElementById("myForm").reset();
-          grecaptcha.reset();
+          form.current.reset();
           setIsSubmitted(true);
         },
         (error) => {
           console.log(error.text);
-        }
+          console.log(error);
+          setLoading(false);
+        },
       );
   };
 
-  //! Handle alert hide
   useEffect(() => {
     if (isSubmitted) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setIsSubmitted(false);
       }, 5000);
+      return () => clearTimeout(timer);
     }
   }, [isSubmitted]);
 
   return (
-    <motion.div
+    <section
       id="contact"
-      className=" flex flex-col justify-center w-full h-screen sm:py-0 sm:px-[30px] md:py-0 md:px-[30px] text-xl sm:text-base md:mt-60 "
-      initial={{ opacity: 0, y: 100 }}
-      viewport={{ once: true }}
-      whileInView={{ opacity: 1, y: 55 }}
-      transition={{ duration: 1.5, ease: "easeOut" }}
+      className="relative w-full py-24 px-4 md:px-8 overflow-hidden"
     >
-      <div className="flex flex-col justify-center items-center  w-full h-full ">
-        <div className="flex flex-col bg-transperant p-5 rounded  md:gap-4 hover:shadow-md hover:shadow-action max-w-3xl sm:px-20 mb-16 sm:w-[48rem]">
-          <h2 className="flex items-center justify-center my-2 sm:text-[30px] text-white">
-            Contact Me.
-          </h2>
-          {/* FORM */}
-          <form id="myForm" ref={form} onSubmit={sendEmail} className=" mt-5">
-            <div className="mb-6">
-              <input
-                type="text"
-                name="from_name"
-                className="w-full font-normal p-1 sm:px-3 sm:py-2 border-b-2 bg-transparent outline-none focus:border-accent text-white"
-                placeholder="Name"
-                required
-              />
-            </div>
-            <div className="mb-6">
-              <input
-                type="email"
-                name="from_email"
-                className="w-full font-normal  p-1 sm:px-3 sm:py-2 border-b-2 bg-transparent outline-none focus:border-accent text-white"
-                placeholder="Email"
-                required
-              />
-            </div>
-            <div className="mb-6">
-              <textarea
-                name="message"
-                className="block  w-full font-normal px-3  border-b-2 outline-none resize-none bg-transparent focus:border-accent text-white"
-                placeholder="Message"
-                rows={6}
-                required
-              ></textarea>
-            </div>
+      {/* Background decoration */}
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[128px] pointer-events-none" />
 
-            {/* ReCAPTCHA */}
-            <Suspense fallback={<div>Loading reCAPTCHA...</div>}>
-              <ReCAPTCHA
-                className="flex justify-center items-center"
-                sitekey="6LfcxlUlAAAAAKqCe3Ze0YbnyoHTGlLQXvdVKIUa"
-                onChange={onChange}
-              />
-            </Suspense>
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <p className="section-subtitle mb-3">Get in touch</p>
+          <h2 className="section-title">Contact Me</h2>
+          <p className="mt-4 text-textMuted max-w-2xl mx-auto">
+            Have a project in mind or just want to say hi? Feel free to reach
+            out!
+          </p>
+        </motion.div>
 
-            {/* BUTTON */}
-            <div className="flex justify-center items-center pt-3">
-              <button
-                disabled={!captcha}
-                type="submit"
-                className={`
-                ${
-                  !captcha
-                    ? "opacity-50 cursor-not-allowed"
-                    : "opacity-100 hover:shadow-action hover:text-action hover:scale-105 "
-                } rounded text-white bg-accent px-5 py-2 shadow-sm `}
-              >
-                {loading ? "Sending..." : "Send"}
-              </button>
-            </div>
-          </form>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col justify-center"
+          >
+            <h3 className="text-4xl font-black text-white mb-6">
+              Let's <span className="text-gradient">Connect</span>
+            </h3>
+            <p className="text-textMuted text-lg mb-10 leading-relaxed">
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities.
+            </p>
 
-        {/* ALERT */}
-        <AnimatePresence>
-          {isSubmitted && (
-            <motion.div
-              className="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md"
-              role="alert"
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div clasName="flex">
-                <div className="py-1">
-                  <svg
-                    className="fill-current h-6 w-6 text-teal-500 mr-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
-                  </svg>
+            <div className="space-y-6">
+              <div className="flex items-center gap-6 group">
+                <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center text-accent text-2xl group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                  <HiMail />
                 </div>
                 <div>
-                  <p className="font-bold">Form submitted successfully</p>
-                  <p className="text-sm">Thank you reaching out!</p>
+                  <p className="text-textMuted text-sm uppercase tracking-widest font-bold">
+                    Email
+                  </p>
+                  <p className="text-white font-bold">hr.spasov32@gmail.com</p>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+
+              <div className="flex items-center gap-6 group">
+                <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center text-teal text-2xl group-hover:scale-110 group-hover:bg-teal group-hover:text-white transition-all duration-300">
+                  <HiChatAlt2 />
+                </div>
+                <div>
+                  <p className="text-textMuted text-sm uppercase tracking-widest font-bold">
+                    Socials
+                  </p>
+                  <div className="flex gap-4 mt-1">
+                    <a
+                      href="https://github.com/Hristo-Spasov"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-accent transition-colors text-2xl"
+                    >
+                      <SiGithub />
+                    </a>
+                    <a
+                      href="https://linkedin.com/hristo-spasov-fnd/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-accent transition-colors text-2xl"
+                    >
+                      <FaLinkedin />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="glass-card p-8 md:p-10 rounded-3xl relative">
+              <form
+                ref={form}
+                onSubmit={sendEmail}
+                className="space-y-6 text-left"
+              >
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-textMuted uppercase tracking-widest ml-1">
+                    Your Name
+                  </label>
+                  <div className="relative">
+                    <HiUser className="absolute left-4 top-1/2 -translate-y-1/2 text-textMuted" />
+                    <input
+                      type="text"
+                      name="from_name"
+                      placeholder="John Doe"
+                      required
+                      className="w-full bg-surface border border-white/5 rounded-xl py-4 pl-12 pr-4 text-white outline-none focus:border-accent transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-textMuted uppercase tracking-widest ml-1">
+                    Email Address
+                  </label>
+                  <div className="relative">
+                    <HiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-textMuted" />
+                    <input
+                      type="email"
+                      name="from_email"
+                      placeholder="john@example.com"
+                      required
+                      className="w-full bg-surface border border-white/5 rounded-xl py-4 pl-12 pr-4 text-white outline-none focus:border-accent transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-textMuted uppercase tracking-widest ml-1">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    rows="5"
+                    placeholder="What's on your mind?"
+                    required
+                    className="w-full bg-surface border border-white/5 rounded-xl py-4 px-4 text-white outline-none focus:border-accent transition-colors resize-none"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="btn-primary w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 group"
+                >
+                  {loading ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      Send Message
+                      <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
+                </button>
+              </form>
+
+              {/* Success Alert */}
+              <AnimatePresence>
+                {isSubmitted && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute inset-0 bg-surface/90 backdrop-blur-md rounded-3xl flex flex-col items-center justify-center text-center p-8 z-10"
+                  >
+                    <div className="w-20 h-20 bg-teal/20 text-teal rounded-full flex items-center justify-center text-4xl mb-6 shadow-glow-teal">
+                      ✓
+                    </div>
+                    <h4 className="text-2xl font-bold text-white mb-2">
+                      Message Sent!
+                    </h4>
+                    <p className="text-textMuted">
+                      Thank you for reaching out. I'll get back to you as soon
+                      as possible.
+                    </p>
+                    <button
+                      onClick={() => setIsSubmitted(false)}
+                      className="mt-8 text-accent font-bold hover:underline"
+                    >
+                      Send another message
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </section>
   );
 }
 

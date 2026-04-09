@@ -1,20 +1,18 @@
 import { ImGithub } from "react-icons/im";
 import { BsLink45Deg } from "react-icons/bs";
 
-// URLs of the project images delivered through Cloudinary
-const ellenaArtGallery =
-  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1691587633/Hristo%20site/ellena_bif8es.webp";
-
-const skycast =
-  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1691588093/Hristo%20site/skycast_eqyb05.webp";
-
-const crownshop =
-  "https://res.cloudinary.com/dh3yknk5o/image/upload/v1691588093/Hristo%20site/crwn-shop_fdczrw.webp";
-
 const navLinks = [
   {
     id: "about",
     title: "About",
+  },
+  {
+    id: "skills",
+    title: "Skills",
+  },
+  {
+    id: "experience",
+    title: "Experience",
   },
   {
     id: "projects",
@@ -28,78 +26,44 @@ const navLinks = [
 
 const projects = [
   {
-    name: "Ellena Art Gallery",
-    description: `Designed by Ellena and developed by me.'Ellena Art Gallery' is captivating website showcasing  Ellena artistic journey. Built using React and TypeScript, the platform elegantly captures her creative expressions while providing an immersive digital art experience.`,
+    name: "Za Vecheria",
+    description: `Full-Stack recipe recommendation platform. Developed using Next.js, TypeScript and Strapi CMS. Integrated Redis for server-side state persistence and high performance query handling. Features a custom Python data pipeline for 1400+ recipes enriched by LLM APIs and AI-generated imagery.`,
     tags: [
-      {
-        name: "typescript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "react",
-        color: "green-text-gradient",
-      },
-      {
-        name: "react router",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "CSS Modules",
-        color: "orange-text-gradient",
-      },
+      { name: "Next.js", color: "blue-text-gradient" },
+      { name: "TypeScript", color: "green-text-gradient" },
+      { name: "PostgreSQL", color: "pink-text-gradient" },
+      { name: "Redis", color: "orange-text-gradient" },
+      { name: "Strapi", color: "blue-text-gradient" },
     ],
-    image_source: ImGithub,
-    source_code: "https://github.com/Trickkyyy/elena-portfolio",
-    image_live: BsLink45Deg,
-    live: "https://ellena-art.gallery",
-    project_image: ellenaArtGallery,
+    source_code: "https://github.com/Hristo-Spasov/za-vacheria-FE",
+    live: "https://www.zavecheria.com",
+    project_image: "https://zavecheria.com/opengraph-image.png",
   },
   {
-    name: "Crown Shop",
-    description: `E-commerce website with authentication and routing.Utilizing React-router and Context API.Authentication though email and password and Google 0Auth.Firestore is used for storing user and products data.`,
+    name: "Azure Routes",
+    description: `Real-time aviation schedule explorer. Built with React, TypeScript, and Node.js. Features dynamic search with PostgreSQL-backed auto suggestions and efficient client-side caching via React Query. Visualizes complex arrivals/departures data from third-party aviation APIs.`,
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "firestore",
-        color: "green-text-gradient",
-      },
-      {
-        name: "styled components",
-        color: "orange-text-gradient",
-      },
+      { name: "React", color: "blue-text-gradient" },
+      { name: "React Query", color: "green-text-gradient" },
+      { name: "Node.js", color: "pink-text-gradient" },
+      { name: "PostgreSQL", color: "orange-text-gradient" },
     ],
-    image_source: ImGithub,
-    source_code: "https://github.com/Trickkyyy/crwn-ecommerce",
-    image_live: BsLink45Deg,
-    live: "https://ecommece-crown-shop.netlify.app/",
-    project_image: crownshop,
+    source_code: "https://github.com/Hristo-Spasov/azureroutes",
+    live: "https://azureroutes.com/",
+    project_image:"https://azureroutes.com/open_graph_image.png", // Placeholder
   },
   {
-    name: "SkyCast",
-    description:
-      "Web application to check the current weather and a 24 hour forecast.The weather data is fetched through two different APIs and also using a geolocation API to display the weather at your current location.",
+    name: "Recipe Data Pipeline",
+    description: `Automated data engineering pipeline. Built with Python and BeautifulSoup for web scraping, using Pandas for validation and LLM APIs for metadata enrichment. Automates AI image generation via ComfyUI WebSocket API to produce structured, multilingual datasets.`,
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "rest api",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: "Python", color: "blue-text-gradient" },
+      { name: "BeautifulSoup", color: "green-text-gradient" },
+      { name: "Pandas", color: "pink-text-gradient" },
+      { name: "OpenAI SDK", color: "orange-text-gradient" },
+      { name: "ComfyUI", color: "orange-text-gradient" },
     ],
-    image_source: ImGithub,
-    source_code: "https://github.com/Trickkyyy/weather-app-react",
-    image_live: BsLink45Deg,
-    live: "https://skycast-v1g9.onrender.com",
-    project_image: skycast,
+    source_code: "https://github.com/Hristo-Spasov/recipe_scrapper",
+    project_image: "https://www.kdnuggets.com/wp-content/uploads/yada_python_used_data_visualization_10.jpg", // Placeholder
   },
 ];
 
